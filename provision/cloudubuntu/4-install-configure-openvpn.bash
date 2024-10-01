@@ -20,7 +20,7 @@ VOLUME_OPENVPN_DATA="/volumes/intranet/openvpn"
 
 EXTERNAL_IP=`curl -s http://whatismyip.akamai.com/`
 
-CLIENT_NAME="AventaNET"
+CLIENT_NAME="ShinobiVPN"
 
 ##
 
@@ -56,5 +56,5 @@ ls -lha $VOLUME_OPENVPN_DATA
 
 docker stop $CLIENT_NAME
 
-echo "done."
+echo "done installing and configuring Open VPN server."
 
