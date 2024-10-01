@@ -2,7 +2,7 @@ services:
 
 ##########################################
 ##
-## network infrastructure
+## public / network infrastructure
 ##
 ##########################################
 
@@ -26,6 +26,12 @@ services:
 
             - "1194:1194/udp"
 
+##########################################
+##
+## private / identity & access managment
+##
+##########################################
+
     private-openvpn-iam:
 
         container_name: private-openvpn-iam
@@ -44,6 +50,12 @@ services:
             
             - "10.28.1.1:1180:80"
 
+##########################################
+##
+## public / vpn server documentation
+##
+##########################################
+
     private-openvpn-docs:
 
         container_name: private-openvpn-docs
@@ -61,6 +73,12 @@ services:
         ports:
 
             - "1188:80"
+
+##########################################
+##
+## vpn traffic / accessible on VPS only
+##
+##########################################
 
     private-network-website:
 
