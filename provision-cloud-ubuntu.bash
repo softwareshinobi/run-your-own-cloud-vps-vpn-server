@@ -14,5 +14,7 @@ set -x
 
 ##
 
-sudo bash ./provision/cloudubuntu/provision.bash
+cd provision/cloudubuntu
+
+sudo bash provision.bash
 
