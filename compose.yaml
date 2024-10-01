@@ -1,0 +1,64 @@
+services:
+
+##########################################
+##
+## network infrastructure
+##
+##########################################
+
+    private-openvpn:
+
+        container_name: private-openvpn
+        
+        image: kylemanna/openvpn
+
+        restart: unless-stopped
+                
+        cap_add:
+
+            - NET_ADMIN       
+
+        volumes:
+
+            - /volumes/intranet/openvpn:/etc/openvpn
+
+        ports:
+
+            - "1194:1194/udp"
+
+    private-openvpn-iam:
+
+        container_name: private-openvpn-iam
+        
+        image: nginx
+
+        restart: unless-stopped
+
+        volumes:
+
+            - /volumes/intranet/openvpn/:/usr/share/nginx/html/
+
+        ports:
+
+            - "127.0.0.1:1180:80"
+            
+            - "10.28.1.1:1180:80"
+
+    private-openvpn-docs:
+
+        container_name: private-openvpn-docs
+
+        image: softwareshinobi/embanet-intranet-docs
+
+        build: 
+
+            context: .
+
+            dockerfile: Dockerfile
+      
+        restart: unless-stopped
+  
+        ports:
+
+            - "3547:80"
+            
