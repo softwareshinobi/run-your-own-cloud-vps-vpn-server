@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+    embaNET-intranet-docs:
+
+        container_name: embaNET-intranet-docs
+
+        image: softwareshinobi/embanet-intranet-docs
+
+        build: 
+
+            context: .
+
+            dockerfile: Dockerfile
+      
+        restart: unless-stopped
+  
+        ports:
+
+            - 8000:80
+            
