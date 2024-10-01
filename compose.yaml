@@ -60,5 +60,19 @@ services:
   
         ports:
 
-            - "3547:80"
+            - "1188:80"
+
+    private-network-website:
+
+        container_name: private-network-website
+
+        image: nginx
+
+        restart: unless-stopped
+  
+        ports:
+
+            - "127.0.0.1:4444:80"
             
+            - "10.28.1.1:4444:80"
+        
