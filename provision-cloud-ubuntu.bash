@@ -14,9 +14,5 @@ set -x
 
 ##
 
-docker compose pull
-
-docker compose down --remove-orphans
-
-docker compose up -d
+sudo bash ./provision/cloudubuntu/provision.bash
 
