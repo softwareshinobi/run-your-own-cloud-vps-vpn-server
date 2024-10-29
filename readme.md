@@ -2,6 +2,42 @@
 
 A self-hosted full-tunnel vpn server with secured private intranet of services likes file, source code, and media servers.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## step 1 / run provision script
+
+will install docker. will reconfigure the network interface
+```
+sudo bash provision.bash
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## About This Repo
 
 This repo installs an OpenVPN server and a collection of private services only accessible while you are connected to the VPN server.

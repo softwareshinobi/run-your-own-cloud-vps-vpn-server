@@ -6,9 +6,9 @@ services:
 ##
 ##########################################
 
-    private-openvpn:
+    public-vpn-server:
 
-        container_name: private-openvpn
+        container_name: public-openvpn-server
         
         image: kylemanna/openvpn
 
